@@ -1,0 +1,12 @@
+
+1)Contiguous allocation is to store each file as a
+contiguous run of disk space which is defined in project. 
+Access has a shorter average operation time in contguous allocation.
+Access get the position directly, not needed extra. However in extend add block after the last block of the file to up there is more operation, in addition check the exist or not sufficient space etc.
+
+2) Small files, then a small block size will be more efficient. The filesystem will reject the creation of new files even if there is plenty of free space — because it has no free inodes
+The count is rejected and the group with the most free blocks is also included in this circumstances hence 32 block-size would be affect FAT memory utlization.
+
+3)If we are compare FAT with the other way to implement the linked allocation - but not with the contiguous - which is keeping a pointer to the next block in the block itself. For linked allocation, a file allocation table (FAT) is not used, i.e., only the address of the starting block is in memory. The File Allocation Table, FAT, used by DOS is a variation of linked allocation, where all the links are stored in a separate table at the beginning of the disk. The benefit of this approach is that the FAT table can be cached in memory, greatly improving random access speeds. And the FAT table keeps track of the free list as just one more linked list on the table
+
+4)File system tries to transfer files to contiguous blocks of disc such that there is a minimal number of access to the correct place on the disk. So if I have extra memory available I try to place the index of the starting block of the file in the correct place
